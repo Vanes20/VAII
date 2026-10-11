@@ -79,8 +79,8 @@ Jedno dielo môže obsahovať viacero kapitol, ale každá kapitola patrí jedn�
 
 ## Vzťahy medzi entitami
 
-Používateľ – Dielo (1:1): Jeden používateľ môže vytvoriť viacero diel, ale každé dielo má práve jedného autora.
-Dielo – Kapitola (1:1): Jedno dielo môže mať viacero kapitol a jedna kapitola môže byť priradená jednému dielu.
+Používateľ – Dielo (1:N): Jeden používateľ môže vytvoriť viacero diel, ale každé dielo má práve jedného autora.
+Dielo – Kapitola (1:N): Jedno dielo môže mať viacero kapitol a jedna kapitola môže byť priradená jednému dielu.
 
 
 
