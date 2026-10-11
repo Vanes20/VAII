@@ -19,19 +19,19 @@ Návštevník
 -Registrácia
 
 Registrovaný používateľ
--Prihlásenie alebo odhlásenie
--Vytvorenie nového diela
--Úprava diela
--Odstránenie diela
--Zverejnenie diela
--Prehliadanie verejne dostupných príbehy a diel.
--Vyhľadávanie diel podľa názvu, autora, tagov.
+- Prihlásenie alebo odhlásenie
+- Vytvorenie nového diela
+- Úprava diela
+- Odstránenie diela
+- Zverejnenie diela
+- Prehliadanie verejne dostupných príbehy a diel.
+- Vyhľadávanie diel podľa názvu, autora, tagov.
 
 Administrator
--Zobrazenie zoznamu použivateľov
--Zobrazenie a spravovanie verejne dostupných diel
--Odstránenie diel
--Zablokovanie alebo odstránenie používateľov
+- Zobrazenie zoznamu použivateľov
+- Zobrazenie a spravovanie verejne dostupných diel
+- Odstránenie diel
+- Zablokovanie alebo odstránenie používateľov
 
 ## Plánované entity
 Použivateľ
