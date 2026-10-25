@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stories - Storylib</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-top">
+
+        <a href="index.html" class="brand">STORYLIB</a>
+
+        <form class="search">
+            <label>
+                <input type="search" placeholder="Search stories...">
+            </label>
+            <button type="submit">⌕</button>
+        </form>
+
+        <a href="myStories.html" class="avatar">👤</a>
+
+    </div>
+
+    <nav class="main-nav">
+        <a href="index.html">HOME</a>
+        <a href="index.html#top-stories">TOP STORIES</a>
+        <a href="index.html#popular">ALL GENRES</a>
+    </nav>
+
+</header>
+
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="myStories.html" class="selected">
+            My Stories
+        </a>
+
+        <a href="#favorites">
+            My Favorites
+        </a>
+
+        <a href="#profile">
+            Profile
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="library-main">
+
+        <div class="page-title">
+
+            <div>
+                <h1>My Stories</h1>
+
+                <p>
+                    Manage your drafts and published stories.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- FILTERS -->
+
+        <section class="library-toolbar">
+
+            <label for="story-filter">Show:</label>
+
+            <select id="story-filter">
+                <option>All stories</option>
+                <option>Published</option>
+                <option>Drafts</option>
+            </select>
+
+            <label for="sort">Sort by:</label>
+
+            <select id="sort">
+                <option>Recently updated</option>
+                <option>Title</option>
+            </select>
+
+        </section>
+
+
+        <!-- STORIES -->
+
+        <section class="owned-stories">
+
+            <article class="owned-card">
+
+                <div class="cover"></div>
+
+                <div class="owned-info">
+
+                    <div class="title-line">
+
+                        <h2>Placeholder title</h2>
+
+                        <span class="published">
+                            Published
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Jelly bonbon dragée cotton candy macaroon cheesecake marshmallow cotton candy ice cream. Gummi bears danish chupa chups candy lollipop bonbon croissant chocolate bar dessert. Wafer candy bonbon jujubes gingerbread.
+                    </p>
+
+                    <div class="story-stats">
+
+                        <span>12 chapters</span>
+
+                        <span>1.2k reads</span>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button type="button">
+                            Edit story
+                        </button>
+
+                        <button type="button">
+                            More
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="owned-card">
+
+                <div class="cover"></div>
+
+                <div class="owned-info">
+
+                    <div class="title-line">
+
+                        <h2>Placeholder title</h2>
+
+                        <span class="draft">
+                            Draft
+                        </span>
+
+                    </div>
+
+                    <p>
+                        Marshmallow cookie topping dessert carrot cake topping tart tiramisu powder. Sesame snaps jujubes chocolate cake macaroon cupcake dessert cupcake candy toffee.
+                    </p>
+
+                    <div class="story-stats">
+
+                        <span>4 chapters</span>
+
+                        <span>Not published</span>
+
+                    </div>
+
+                    <div class="card-actions">
+
+                        <button type="button">
+                            Continue writing
+                        </button>
+
+                        <button type="button">
+                            More
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- CREATE STORY -->
+
+            <button class="create-story" type="button">
+
+                <span class="plus">+</span>
+
+                <strong>Create a new story</strong>
+
+            </button>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
