@@ -323,20 +323,28 @@ select {
     margin-top: 15px;
 }
 
+.card-actions form {
+    margin: 0;
+}
+
+.card-actions a,
 .card-actions button {
+    display: inline-block;
     padding: 7px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 14px;
 }
 
-.card-actions button:first-child {
+.card-actions .btn-primary {
     background: #6654a3;
     color: white;
 }
 
-.card-actions button:last-child {
+.card-actions .btn-secondary {
     background: #eee;
+    color: #333;
 }
 
 
@@ -504,6 +512,7 @@ select {
         font-size: 11px;
     }
 
+    .card-actions a,
     .card-actions button {
         font-size: 11px;
     }
@@ -532,4 +541,65 @@ select {
         aspect-ratio: 1.5;
     }
 
+}
+
+/* STORY FORM */
+
+.story-form {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.story-form label {
+    font-weight: bold;
+}
+
+.story-form input,
+.story-form textarea,
+.story-form select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.story-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.form-actions button,
+.form-actions a {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.form-actions button {
+    background: #6654a3;
+    color: white;
+}
+
+.form-actions a {
+    background: #eee;
+    color: #333;
+}
+
+.errors {
+    background: #fde8e8;
+    color: #a12626;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }

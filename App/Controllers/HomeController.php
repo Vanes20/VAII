@@ -42,10 +42,7 @@ class HomeController extends BaseController
         return $this->html();
     }
 
-    public function myStories(Request $request): Response
-    {
-        return $this->html();
-    }
+
 
     /**
      * Displays the contact page.

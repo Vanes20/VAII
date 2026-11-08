@@ -28,7 +28,7 @@
             <button type="submit">⌕</button>
         </form>
 
-        <a href="<?= $link->url('home.myStories') ?>" class="avatar">👤</a>
+        <a href="<?= $link->url('story.index') ?>" class="avatar">👤</a>
 
     </div>
 
