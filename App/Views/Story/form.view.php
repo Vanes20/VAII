@@ -36,9 +36,6 @@
             <option value="published" <?= $story->getStatus() === 'published' ? 'selected' : '' ?>>Published</option>
         </select>
 
-        <label for="chapters">Chapters</label>
-        <input type="number" id="chapters" name="chapters" min="0" required
-               value="<?= (int)$story->getChapters() ?>">
 
         <div class="form-actions">
             <button type="submit">Save</button>

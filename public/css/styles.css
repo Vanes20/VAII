@@ -464,7 +464,7 @@ select {
 
     .sidebar {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         padding: 0;
         gap: 2px;
     }
@@ -602,4 +602,34 @@ select {
     padding: 10px 15px;
     border-radius: 5px;
     margin-bottom: 20px;
+}
+
+/* CHAPTERS */
+
+.btn-add {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #6654a3;
+    color: white;
+    border-radius: 5px;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+.chapter-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.chapter-table th,
+.chapter-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chapter-table .card-actions {
+    margin-top: 0;
 }

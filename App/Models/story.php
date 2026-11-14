@@ -10,7 +10,6 @@ class Story extends Model
     protected ?string $title = null;
     protected ?string $description = null;
     protected ?string $status = 'draft';
-    protected ?int $chapters = 0;
 
     public function getId(): ?int
     {
@@ -47,18 +46,13 @@ class Story extends Model
         $this->status = $status;
     }
 
-    public function getChapters(): ?int
-    {
-        return $this->chapters;
-    }
-
-    public function setChapters(int $chapters): void
-    {
-        $this->chapters = $chapters;
-    }
-
     public function isPublished(): bool
     {
         return $this->status === 'published';
+    }
+
+    public function getChaptersCount(): int
+    {
+        return count($this->getAllRelated(Chapter::class));
     }
 }

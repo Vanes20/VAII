@@ -30,42 +30,36 @@ class StoryController extends BaseController
     }
 
     // CREATE + UPDATE - uloženie z formulára
-    public function save(Request $request): Response
-    {
-        if (!$request->isPost()) {
-            throw new HttpException(405);
+        public function save(Request $request): Response
+        {
+            if (!$request->isPost()) {
+                throw new HttpException(405);
+            }
+
+            $id = (int)$request->post('id');
+            $story = $id > 0 ? $this->getStoryOr404($id) : new Story();
+
+            $story->setTitle(trim((string)$request->post('title')));
+            $story->setDescription(trim((string)$request->post('description')));
+            $story->setStatus((string)$request->post('status'));
+
+            $errors = [];
+            if ($story->getTitle() === '') {
+                $errors[] = 'Názov príbehu nesmie byť prázdny.';
+            } elseif (mb_strlen($story->getTitle()) > 150) {
+                $errors[] = 'Názov príbehu môže mať najviac 150 znakov.';
+            }
+            if (!in_array($story->getStatus(), ['draft', 'published'], true)) {
+                $errors[] = 'Neplatný stav príbehu.';
+            }
+
+            if (count($errors) > 0) {
+                return $this->html(['story' => $story, 'errors' => $errors], 'form');
+            }
+
+            $story->save();
+            return $this->redirect($this->url('story.index'));
         }
-
-        $id = (int)$request->post('id');
-        $story = $id > 0 ? $this->getStoryOr404($id) : new Story();
-
-        $chapters = filter_var($request->post('chapters'), FILTER_VALIDATE_INT);
-
-        $story->setTitle(trim((string)$request->post('title')));
-        $story->setDescription(trim((string)$request->post('description')));
-        $story->setStatus((string)$request->post('status'));
-        $story->setChapters($chapters === false ? 0 : $chapters);
-
-        $errors = [];
-        if ($story->getTitle() === '') {
-            $errors[] = 'Názov príbehu nesmie byť prázdny.';
-        } elseif (mb_strlen($story->getTitle()) > 150) {
-            $errors[] = 'Názov príbehu môže mať najviac 150 znakov.';
-        }
-        if (!in_array($story->getStatus(), ['draft', 'published'], true)) {
-            $errors[] = 'Neplatný stav príbehu.';
-        }
-        if ($chapters === false || $chapters < 0) {
-            $errors[] = 'Počet kapitol musí byť celé číslo, minimálne 0.';
-        }
-
-        if (count($errors) > 0) {
-            return $this->html(['story' => $story, 'errors' => $errors], 'form');
-        }
-
-        $story->save();
-        return $this->redirect($this->url('story.index'));
-    }
 
     // DELETE
     public function delete(Request $request): Response

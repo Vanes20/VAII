@@ -6,12 +6,7 @@
 
 <div class="dashboard">
 
-    <aside class="sidebar">
-        <a href="<?= $link->url('story.index') ?>" class="selected">My Stories</a>
-        <a href="#favorites">My Favorites</a>
-        <a href="#profile">Profile</a>
-        <a href="<?= $link->url('home.index') ?>">Home</a>
-    </aside>
+        <?php $activePage = 'stories'; require __DIR__ . '/../_Shared/_sidebar.php'; ?>
 
     <main class="library-main">
 
@@ -56,13 +51,17 @@
                         <p><?= e($story->getDescription()) ?></p>
 
                         <div class="story-stats">
-                            <span><?= $story->getChapters() ?> chapters</span>
+                            <span><?= $story->getChaptersCount() ?> chapters</span>
                             <span><?= $story->isPublished() ? 'Published' : 'Not published' ?></span>
                         </div>
 
                         <div class="card-actions">
                             <a href="<?= $link->url('story.edit', ['id' => $story->getId()]) ?>" class="btn-primary">
                                 Edit story
+                            </a>
+
+                            <a href="<?= $link->url('chapter.index', ['storyId' => $story->getId()]) ?>" class="btn-secondary">
+                                Chapters
                             </a>
 
                             <form method="post" action="<?= $link->url('story.delete') ?>">
